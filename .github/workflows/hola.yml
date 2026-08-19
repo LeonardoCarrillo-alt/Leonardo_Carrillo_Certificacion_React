@@ -10,3 +10,5 @@ jobs:
         run: echo "saludar"
       - name: Descargar código
         uses: actions/checkout@v4
+      - name: ver carpetas
+        run: pwd
