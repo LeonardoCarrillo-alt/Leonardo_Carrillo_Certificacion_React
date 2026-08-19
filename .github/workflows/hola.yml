@@ -1,4 +1,4 @@
-name: hola mundo 
+name: descargando 
 on:
    push:
    workflow_dispatch: 
@@ -8,3 +8,5 @@ jobs:
     steps: 
       - name: saludar
         run: echo "saludar"
+      - name: Descargar código
+        uses: actions/checkout@v4
