@@ -1,5 +1,6 @@
 name: hola mundo 
 on:
+   push:
    workflow_dispatch: 
 jobs: 
   hola: 
