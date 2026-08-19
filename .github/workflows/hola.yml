@@ -18,3 +18,5 @@ jobs:
         uses: actions/setup-node@v4
       - name: node version
         run: node --version
+      - name: npm version
+        run: npm --version
