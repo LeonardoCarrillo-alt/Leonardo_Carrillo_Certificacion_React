@@ -6,5 +6,19 @@
    qa: 
      runs-on: ubuntu-latest
      steps:
+       - name: Descargar código
+         uses: actions/checkout@v4
+       - name: ver carpetas
+         run: pwd
+       - name: ver archivos
+         run: ls -la
+       - name: instalar node
+         uses: actions/setup-node@v4
+       - name: node version
+         run: node --version
+       - name: npm version
+         run: npm --version
+       - name: install typescript
+         run: npm install typescript --save-dev
        - name: ts conversion
          run: tsc --noEmit
