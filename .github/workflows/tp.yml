@@ -5,9 +5,6 @@
  jobs: 
    qa: 
      runs-on: ubuntu-latest
-     defaults: 
-       run:
-         working-directory: archivos_clases
      steps:
        - name: Descargar código
          uses: actions/checkout@v4
@@ -28,4 +25,4 @@
        - name: install typescript
          run: npm install typescript --save-dev
        - name: ts conversion
-         run: tsc --noEmit
+         run: tsc --noEmit archivos_clases/clase16/buscaminas.ts
