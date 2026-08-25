@@ -1,0 +1,10 @@
+ name: typescript validation 
+ on: 
+    push:
+    workflow_dispatch: 
+ jobs: 
+   qa: 
+     runs-on: ubuntu-latest
+     steps:
+       - name: ts conversion
+         run: tsc --noEmit
