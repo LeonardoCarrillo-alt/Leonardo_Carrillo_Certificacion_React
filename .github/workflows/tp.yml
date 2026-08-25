@@ -20,8 +20,6 @@
          run: node --version
        - name: npm version
          run: npm --version
-       - name: instalar dependencias
-         run: npm ci
        - name: install typescript
          run: npm install typescript --save-dev
        - name: ts conversion
