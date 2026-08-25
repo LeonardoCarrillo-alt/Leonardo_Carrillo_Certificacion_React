@@ -5,6 +5,9 @@
  jobs: 
    qa: 
      runs-on: ubuntu-latest
+     defaults: 
+       run:
+         working-directory: archivos_clases
      steps:
        - name: Descargar código
          uses: actions/checkout@v4
@@ -14,10 +17,14 @@
          run: ls -la
        - name: instalar node
          uses: actions/setup-node@v4
+         with: 
+           node-version: 22
        - name: node version
          run: node --version
        - name: npm version
          run: npm --version
+       - name: instalar dependencias
+         run: npm ci
        - name: install typescript
          run: npm install typescript --save-dev
        - name: ts conversion
