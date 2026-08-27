@@ -23,3 +23,8 @@
          run: npm ci
        - name: ejecutar build en la carpeta del proyecto
          run: npm run build
+       - name: Guardar Zip
+         uses: actions/upload-artifact@v4
+         with:
+           name: aplicacion-web
+           path: ./dist
