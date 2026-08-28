@@ -28,3 +28,5 @@
          with:
            name: aplicacion-web
            path: archivos_clases/t-e-r/dist
+       - name: Configurar Github Pages
+         uses: actions/configure-pages@v5
