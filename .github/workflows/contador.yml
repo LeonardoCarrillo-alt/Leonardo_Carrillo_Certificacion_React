@@ -1,0 +1,30 @@
+ name: vite React check
+ on: 
+    push:
+    workflow_dispatch: 
+ jobs: 
+   qa: 
+     runs-on: ubuntu-latest
+     defaults:
+       run:
+         working-directory: archivos_clases/t-e-r
+     steps:
+       - name: Descargar código
+         uses: actions/checkout@v4
+       - name: ver carpetas
+         run: pwd
+       - name: ver archivos
+         run: ls -la
+       - name: instalar node
+         uses: actions/setup-node@v4
+         with: 
+           node-version: 22
+       - name: instalar dependencias
+         run: npm ci
+       - name: ejecutar build en la carpeta del proyecto
+         run: npm run build
+       - name: Guardar Zip
+         uses: actions/upload-artifact@v4
+         with:
+           name: aplicacion-web
+           path: archivos_clases/t-e-r/dist
