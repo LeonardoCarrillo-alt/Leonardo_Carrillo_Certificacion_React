@@ -1,0 +1,40 @@
+ name: deploy snake game
+ on: 
+
+   push:
+   workflow_dispatch: 
+ permissions: 
+   id-token: write
+   pages: write 
+   contents: read
+ jobs: 
+   check: 
+     runs-on: ubuntu-latest
+     defaults:
+       run:
+         working-directory: archivos_clases/SegundoParcial/Snakes
+     steps:
+       - name: Descargar código
+         uses: actions/checkout@v4
+       - name: ver carpetas
+         run: pwd
+       - name: ver archivos
+         run: ls -la
+       - name: instalar node
+         uses: actions/setup-node@v4
+         with: 
+           node-version: 22
+       - name: instalar dependencias
+         run: npm ci
+       - name: ejecutar build en la carpeta del proyecto
+         run: npm run build
+       - name: ver archivos
+         run: ls -la
+       - name: Configurar Github Pages
+         uses: actions/configure-pages@v5
+       - name: Subir dist 
+         uses: actions/upload-pages-artifact@v4
+         with:
+           path: archivos_clases/SegundoParcial/Snakes/dist
+       - name: Publicar Página Web
+         uses: actions/deploy-pages@v4
