@@ -1,39 +1,39 @@
- name: vite React check with typescript
- on: 
+# name: vite React check with typescript
+# on: 
 
-   push:
-   workflow_dispatch: 
- permissions: 
-   id-token: write
-   pages: write
- jobs: 
-   qa: 
-     runs-on: ubuntu-latest
-     defaults:
-       run:
-         working-directory: archivos_clases/t-e-r
-     steps:
-       - name: Descargar código
-         uses: actions/checkout@v4
-       - name: ver carpetas
-         run: pwd
-       - name: ver archivos
-         run: ls -la
-       - name: instalar node
-         uses: actions/setup-node@v4
-         with: 
-           node-version: 22
-       - name: instalar dependencias
-         run: npm ci
-       - name: ejecutar build en la carpeta del proyecto
-         run: npm run build
-       - name: ver archivos
-         run: ls -la
-       - name: Configurar Github Pages
-         uses: actions/configure-pages@v5
-       - name: Subir dist 
-         uses: actions/upload-pages-artifact@v4
-         with:
-           path: archivos_clases/t-e-r/dist
-       - name: Publicar Página Web
-         uses: actions/deploy-pages@v4
+#   push:
+#   workflow_dispatch: 
+# permissions: 
+#   id-token: write
+#   pages: write
+# jobs: 
+#   qa: 
+#     runs-on: ubuntu-latest
+#     defaults:
+#       run:
+#         working-directory: archivos_clases/t-e-r
+#     steps:
+#       - name: Descargar código
+#         uses: actions/checkout@v4
+#       - name: ver carpetas
+#         run: pwd
+#       - name: ver archivos
+#         run: ls -la
+#      - name: instalar node
+ #        uses: actions/setup-node@v4
+ #        with: 
+  #         node-version: 22
+   #    - name: instalar dependencias
+    #     run: npm ci
+     #  - name: ejecutar build en la carpeta del proyecto
+  #       run: npm run build
+  #     - name: ver archivos
+   #      run: ls -la
+   #    - name: Configurar Github Pages
+   #      uses: actions/configure-pages@v5
+   #    - name: Subir dist 
+    #     uses: actions/upload-pages-artifact@v4
+    #     with:
+    #       path: archivos_clases/t-e-r/dist
+    #   - name: Publicar Página Web
+    #     uses: actions/deploy-pages@v4
