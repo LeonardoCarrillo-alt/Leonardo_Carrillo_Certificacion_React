@@ -1,0 +1,17 @@
+.arma {
+     width: 25rem;
+     height: 5rem;
+     background-color: gray;
+     bottom: 0;
+     position: fixed;
+     left: 50%;
+     transform: translateX(-50%);
+}
+.bala {
+     width: 5rem;
+     height: 5rem;
+     background-color: red;
+     position: fixed;
+     transform: translateX(-50%);
+
+}
