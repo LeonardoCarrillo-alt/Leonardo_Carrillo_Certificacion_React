@@ -15,3 +15,10 @@
      transform: translateX(-50%);
 
 }
+.alien {
+     width: 5rem;
+     height: 5rem;
+     background-color: blue;
+     position: fixed;
+     transform: translateX(-50%);
+}
